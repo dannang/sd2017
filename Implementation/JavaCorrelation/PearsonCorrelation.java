@@ -1,4 +1,4 @@
-package javacorrelation;
+package JavaCorrelation;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ public class PearsonCorrelation {
 
     public double getCorrelation(ArrayList<Float> xValues, ArrayList<Float> yValues) {
 
-    //Vectorii xValues si yValues sunt utilizati in scopul stocarii valorilor titlurilor pe piata. 
+        //Vectorii xValues si yValues sunt utilizati in scopul stocarii valorilor titlurilor pe piata. 
         // Variabila xSum face referire la suma tuturor valorilor din vectorul xValues si, respectiv, yValues;
         // ySquareSum si YSquareSum sunt variabli care retin valorile sumelor xSum si YSum la patrat, care 
         //ulterior vor fi folosite in cadrul formulei de calcul al coeficientului Pearson. In acelasi scop a 

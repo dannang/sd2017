@@ -39,7 +39,8 @@ public class Svc2_TSYMSE {
             System.out.print(": " + closeS2.get(i) + ", ");
         }
 
-        pearsonCoefficient = PearsonCorrelation.getCorrelation(closeS1, closeS2);
+        PearsonCorrelation correlation = new PearsonCorrelation();
+        pearsonCoefficient = correlation.getCorrelation(closeS1, closeS2);
         
         return pearsonCoefficient;
     }

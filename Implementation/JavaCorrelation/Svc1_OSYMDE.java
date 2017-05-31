@@ -39,8 +39,10 @@ public class Svc1_OSYMDE {
         for (int i = 0; i < closeS1.size(); i++) {
             System.out.print(": " + closeS2.get(i) + ", ");
         }
-
-        pearsonCoefficient = PearsonCorrelation.getCorrelation(closeS1, closeS2);
+        
+        PearsonCorrelation correlation = new PearsonCorrelation();
+        pearsonCoefficient = correlation.getCorrelation(closeS1, closeS2);
+        
         return pearsonCoefficient;
     }
 

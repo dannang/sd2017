@@ -20,10 +20,12 @@ public class JavaCorrelation {
         java.util.Date date2 = format.parse("25/05/2017");
 
         double res1, res2;
-        res1 = Svc1_OSYMDE.getSvc1("Russell 2000", date1, date2, "New York", "Chicago");
+        Svc1_OSYMDE osymde = new Svc1_OSYMDE();
+        res1 = osymde.getSvc1("Russell 2000", date1, date2, "New York", "Chicago");
         System.out.print("\nThe Pearson coefficient for first service is = " + res1);
 
-        res2 = Svc2_TSYMSE.getSvc2("Russell 2000", "Nikkei", date1, date2, "Chicago");
+        Svc2_TSYMSE tsymse = new Svc2_TSYMSE();
+        res2 = tsymse.getSvc2("Russell 2000", "Nikkei", date1, date2, "Chicago");
         System.out.print("\nThe Pearson coefficient for the second service service is = " + res2);
     }
 }

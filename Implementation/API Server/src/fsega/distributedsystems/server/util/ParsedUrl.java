@@ -14,8 +14,8 @@ public class ParsedUrl {
 	private String p_beginDate;
 	private String p_endDate;
 	
+	private String p_extra;
 	private String p_symbol1;
-	private String p_symbol2;
 	private String p_exchange;
 	
 	private static String parameterPatternTemplate = "(?<=%s\\=)\\w+(?=(&|$))";
@@ -34,13 +34,13 @@ public class ParsedUrl {
 		}
 	}
 	
-	public ParsedUrl(String serviceName, String beginDate, String endDate, String symbol1, String symbol2, String exchange) {
+	public ParsedUrl(String serviceName, String beginDate, String endDate, String symbol1, String extra, String exchange) {
 		this.serviceName = serviceName;
 		this.p_beginDate = beginDate;
 		this.p_endDate = endDate;
 		
+		this.p_extra = extra;
 		this.p_symbol1 = symbol1;
-		this.p_symbol2 = symbol2;
 		this.p_exchange = exchange;
 	}
 	
@@ -64,8 +64,8 @@ public class ParsedUrl {
 		return p_symbol1;
 	}
 	
-	public String getSymbol2() {
-		return p_symbol2;
+	public String getExtra() {
+		return p_extra;
 	}
 
 	public String getExchange() {
@@ -105,5 +105,11 @@ public class ParsedUrl {
 		}
 		
 		return extractedParameterValues.toArray(new String[0]);
+	}
+
+	public boolean equals(ParsedUrl other) {
+		return serviceName.equals(other.serviceName) && p_beginDate.equals(other.getBeginDate()) &&
+			   p_endDate.equals(other.getEndDate()) && p_symbol1.equals(other.getSymbol1()) &&
+			   p_extra.equals(other.getExtra()) && p_exchange.equals(other.getExchange());
 	}
 }

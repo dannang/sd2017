@@ -19,6 +19,7 @@ import java.text.ParseException;
  */
 public class PostgressDriver extends AbstractAccess {
     
+    private String DATABASE_PASSWORD = "sd2017.PostgreSQL";
     private String DATABASE_DRIVER = "com.postgresql.jdbc.Driver";
     private String DATABASE_URL = "jdbc:postgresql://localhost:3306/historicaldata";
     

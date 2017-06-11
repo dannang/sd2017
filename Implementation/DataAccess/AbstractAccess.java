@@ -21,8 +21,9 @@ public abstract class AbstractAccess implements AccessInterface {
     private String DATABASE_DRIVER;
     private String DATABASE_URL;
     public Connection connection;
-    private String DATABASE_USERNAME = "root";
-    private String DATABASE_PASSWORD = "root";
+    private String DATABASE_NAME = "historicaldata";
+    private String DATABASE_USERNAME = "sd2017";
+    private String DATABASE_PASSWORD = "sd2017";
     private String STATEMENT;
 
     /**
@@ -116,5 +117,10 @@ public abstract class AbstractAccess implements AccessInterface {
     public String getStatement() 
     {
         return STATEMENT;
+    }
+    
+    public String getDatabaseName()
+    {
+        return DATABASE_NAME;
     }
 }

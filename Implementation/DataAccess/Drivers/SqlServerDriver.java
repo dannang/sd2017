@@ -12,6 +12,7 @@ import DataAccess.AbstractAccess;
  */
 public class SqlServerDriver extends AbstractAccess{
 
+    private String DATABASE_PASSWORD = "sd2017.SQL-Server";
     private String DATABASE_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private String DATABASE_URL = "jdbc:sqlserver://localhost:3306/historicaldata";
     private String STATEMENT = "SELECT * from data WHERE date BETWEEN ? AND ? AND symbol = ? AND idexchange IN (SELECT idexchange FROM exchange WHERE marketsymbol = ?)";

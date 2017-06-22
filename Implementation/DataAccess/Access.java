@@ -29,7 +29,7 @@ public class Access {
         return driver;
     }
 
-    public void insertData(Date date, Float open, Float high, Float low, Float close, Float volume, Float adjClose, String symbol) {
+    public void insertData(Date date, Doable open, Doable high, Doable low, Doable close, Doable volume, Doable adjClose, String symbol) {
         for (AbstractAccess db : dbtypes) {
             try {
                 db.insert(date, open, high, low, close, volume, adjClose, symbol);

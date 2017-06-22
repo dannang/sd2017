@@ -26,7 +26,7 @@ public class ServerRunner {
 		int threads =  getCommandLineArgumentValue(args, threadsIndex, new NumericInterval<Integer>(1, 128), 32);
 		int cacheExpiration = getCommandLineArgumentValue(args, cacheExpirationIndex, new NumericInterval<Integer>(0, Integer.MAX_VALUE), 0);
 		
-		SimpleServer server = SimpleServer.getInstance(port, threads, cacheExpiration);
+		final SimpleServer server = SimpleServer.getInstance(port, threads, cacheExpiration);
 		
 		// if it's running in the development environment, the server will stop by itself after X seconds
 		if (isDevEnvironment()) {

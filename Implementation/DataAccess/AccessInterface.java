@@ -26,7 +26,7 @@ public interface AccessInterface {
      * @param adjClose
      * @param symbol 
      */
-    public void insert(Date date, Doable open, Doable high, Doable low, Doable close, Doable volume, Doable adjClose, String symbol);
+    public void insert(Date date, Float open, Float high, Float low, Float close, Float volume, Float adjClose, String symbol);
     /**
      * Asks for the comparison of 2 different titles (symbols) on the same market
      * 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import DataAccess.AbstractAccess;
-import DataAccess.Drivers.SqlServerDriver;
+import DataAccess.Access;
 
 /* Serviciul 1 se refera la compararea aceluiasi titlu(simbol) pe doua piete diferite 
  (OSYMDE => O = one, SYM = symbol, D = different, E = exchanges).*/
@@ -18,14 +18,15 @@ public class Svc1_OSYMDE {
     public double getSvc1(String nameSym, Date startDate, Date endDate, String exc1, String exc2) throws ParseException {
 
         double pearsonCoefficient;
-        AbstractAccess dataAccess = new SqlServerDriver();
+        Access dataAccess = new Access();
+        AbstractAccess driver = dataAccess.getDriver();
 
         ArrayList<Float> closeS1 = new ArrayList<Float>();
         ArrayList<Float> closeS2 = new ArrayList<Float>();
 
         try {
-            closeS1 = dataAccess.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym, exc1);
-            closeS2 = dataAccess.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym, exc2);
+            closeS1 = driver.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym, exc1);
+            closeS2 = driver.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym, exc2);
         } catch (Exception e) {
             e.printStackTrace();
         }

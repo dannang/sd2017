@@ -1,7 +1,7 @@
 package JavaCorrelation;
 
 import DataAccess.AbstractAccess;
-import DataAccess.Drivers.SqlServerDriver;
+import DataAccess.Access;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,14 +17,15 @@ public class Svc2_TSYMSE {
     public double getSvc2(String nameSym1, String nameSym2, Date startDate, Date endDate, String exc) throws ParseException {
 
         double pearsonCoefficient;
-        AbstractAccess dataAccess = new SqlServerDriver();
-
+        Access dataAccess = new Access();
+        AbstractAccess driver = dataAccess.getDriver();
+        
         ArrayList<Float> closeS1 = new ArrayList<Float>();
         ArrayList<Float> closeS2 = new ArrayList<Float>();
 
         try {
-            closeS1 = dataAccess.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym1, exc);
-            closeS2 = dataAccess.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym2, exc);
+            closeS1 = driver.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym1, exc);
+            closeS2 = driver.getIntervalCloseDataBySymAndExc(startDate, endDate, nameSym2, exc);
         } catch (Exception e) {
             e.printStackTrace();
         }

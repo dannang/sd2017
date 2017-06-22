@@ -15,6 +15,19 @@ import java.util.ArrayList;
 public interface AccessInterface {
    
     /**
+     * Saving data in the database
+     * 
+     * @param date
+     * @param open
+     * @param high
+     * @param low
+     * @param close
+     * @param volume
+     * @param adjClose
+     * @param symbol 
+     */
+    public void insert(Date date, Float open, Float high, Float low, Float close, Float volume, Float adjClose, String symbol);
+    /**
      * Asks for the comparison of 2 different titles (symbols) on the same market
      * 
      * @param startDate - start of comparison interval 

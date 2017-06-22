@@ -16,5 +16,6 @@ public class SqlServerDriver extends AbstractAccess{
     private String DATABASE_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private String DATABASE_URL = "jdbc:sqlserver://172.19.0.2:32809/historicaldata";
     private String STATEMENT = "SELECT * from date WHERE date BETWEEN ? AND ? AND symbol = ?;";
+    private String INSERT_QUERY = "INSERT INTO date VALUES (NULL,?,?,?,?,?,?,?,?,0)";
 }
  

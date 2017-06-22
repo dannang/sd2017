@@ -25,5 +25,5 @@ public class MysqlDriver extends AbstractAccess {
 
     private String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
     private String DATABASE_URL = "jdbc:mysql://172.19.0.4:3306/historicaldata";
-    private String STATEMENT = "SELECT * from data WHERE date BETWEEN ? AND ? AND symbol = ?;";
+//    private String STATEMENT = "SELECT * from data WHERE date BETWEEN ? AND ? AND symbol = ?;";
 }
